@@ -4,7 +4,7 @@
 	Plugin URI: https://profiles.wordpress.org/jsulz
 	Description: 
 	Author: Jared Sulzdorf
-	Version: 1.0.0
+	Version: 1.0
 	Author URI: https://profiles.wordpress.org/jsulz
  */
 	
