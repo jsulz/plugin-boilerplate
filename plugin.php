@@ -41,10 +41,11 @@ if( ! class_exists( 'CLASSNAME' ) ) {
 			define( 'PLUGIN_FOLDER', plugin_dir_path( __FILE__ ) );
 			define( 'PLUGIN_INC', trailingslashit( PLUGIN_FOLDER . 'inc' ) );
 			define( 'PLUGIN_CSS', trailingslashit( PLUGIN_FOLDER . 'css' ) );
-			define( 'PLUGIN_JS', trailingslashit( PLUGIN_FOLDER . 'js' ) );	
+			define( 'PLUGIN_JS', trailingslashit( PLUGIN_FOLDER . 'js' ) );
 			define( 'PLUGIN_SHORTCODES', PLUGIN_INC . 'shortcodes.php');
 			define( 'PLUGIN_WIDGET', PLUGIN_INC . 'widget.php' );
 			define( 'PLUGIN_API_CLIENT', PLUGIN_INC . 'client.php' );
+			define( 'PLUGIN_SCRIPTS', PLUGIN_INC . 'scripts.php' );
 
 		}
 
@@ -63,13 +64,6 @@ if( ! class_exists( 'CLASSNAME' ) ) {
 
 	    	load_plugin_textdomain( 'text-domain', FALSE, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
-		}
-
-		//Add this to it's own file - scripts.php
-		//Don't hardcode version number - add as constant
-		public function load_all_scripts() {
-
-			wp_enqueue_style( 'handle', plugin_dir_url( __FILE__ ) . 'css/styles.css', array(), '0.1', 'all' );
 		}
 		
 	}
