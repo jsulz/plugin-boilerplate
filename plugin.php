@@ -1,8 +1,8 @@
 <?php
 /*
-	Plugin Name: 
+	Plugin Name: Plugin Boilerplate
 	Plugin URI: https://profiles.wordpress.org/jsulz
-	Description: 
+	Description: A starting point for all my plugins
 	Author: Jared Sulzdorf
 	Version: 1.0
 	Author URI: https://profiles.wordpress.org/jsulz
@@ -26,8 +26,6 @@ if( ! class_exists( 'CLASSNAME' ) ) {
 	                self::$instance = new CLASSNAME( );
 	                self::$instance->plugin_constants( );
 	                self::$instance->plugin_requires( );
-	                add_action( 'wp_enqueue_scripts', array( self::$instance, 'load_all_scripts' ) );
-	                //check when text domain can be queued up and load appropriately
 
 	            }
 
@@ -39,9 +37,12 @@ if( ! class_exists( 'CLASSNAME' ) ) {
 		public function plugin_constants() {
 
 			define( 'PLUGIN_FOLDER', plugin_dir_path( __FILE__ ) );
+			define( 'PLUGIN_LOCAL_ASSETS', plugin_dir_url( __FILE__ ) );
 			define( 'PLUGIN_INC', trailingslashit( PLUGIN_FOLDER . 'inc' ) );
-			define( 'PLUGIN_CSS', trailingslashit( PLUGIN_FOLDER . 'css' ) );
-			define( 'PLUGIN_JS', trailingslashit( PLUGIN_FOLDER . 'js' ) );
+			define( 'PLUGIN_CSS', trailingslashit( PLUGIN_LOCAL_ASSETS . 'css' ) );
+			define( 'PLUGIN_JS', trailingslashit( PLUGIN_LOCAL_ASSETS . 'js' ) );
+			define( 'PLUGIN_SETTINGS', trailingslashit( PLUGIN_FOLDER . 'settings' ) );
+			define( 'PLUGIN_SETTINGS_PAGE', PLUGIN_SETTINGS . 'settings_page.php' );
 			define( 'PLUGIN_SHORTCODES', PLUGIN_INC . 'shortcodes.php');
 			define( 'PLUGIN_WIDGET', PLUGIN_INC . 'widget.php' );
 			define( 'PLUGIN_API_CLIENT', PLUGIN_INC . 'client.php' );
@@ -56,6 +57,7 @@ if( ! class_exists( 'CLASSNAME' ) ) {
 			require( PLUGIN_SCRIPTS ) ;
 			require( PLUGIN_WIDGET );
 			require( PLUGIN_API_CLIENT );
+			require( PLUGIN_SETTINGS_PAGE );
 
 		}
 		//in case someone wants to translate stuff 
