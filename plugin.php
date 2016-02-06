@@ -41,8 +41,10 @@ if( ! class_exists( 'CLASSNAME' ) ) {
 			define( 'PLUGIN_INC', trailingslashit( PLUGIN_FOLDER . 'inc' ) );
 			define( 'PLUGIN_CSS', trailingslashit( PLUGIN_LOCAL_ASSETS . 'css' ) );
 			define( 'PLUGIN_JS', trailingslashit( PLUGIN_LOCAL_ASSETS . 'js' ) );
-			define( 'PLUGIN_SETTINGS', trailingslashit( PLUGIN_FOLDER . 'settings' ) );
-			define( 'PLUGIN_SETTINGS_PAGE', PLUGIN_SETTINGS . 'settings_page.php' );
+			define( 'PLUGIN_ADMIN', trailingslashit( PLUGIN_FOLDER . 'admin' ) );
+			define( 'PLUGIN_SETTINGS_PAGE', PLUGIN_ADMIN . 'settings_page.php' );
+			define( 'PLUGIN_POST_META_BOX', PLUGIN_ADMIN . 'post_meta_box.php' );
+			define( 'PLUGIN_CUSTOM_FIELDS', PLUGIN_ADMIN . 'custom_fields.php' );
 			define( 'PLUGIN_SHORTCODES', PLUGIN_INC . 'shortcodes.php');
 			define( 'PLUGIN_WIDGET', PLUGIN_INC . 'widget.php' );
 			define( 'PLUGIN_API_CLIENT', PLUGIN_INC . 'client.php' );
@@ -58,6 +60,8 @@ if( ! class_exists( 'CLASSNAME' ) ) {
 			require( PLUGIN_WIDGET );
 			require( PLUGIN_API_CLIENT );
 			require( PLUGIN_SETTINGS_PAGE );
+			require( PLUGIN_POST_META_BOX );
+			//require( PLUGIN_CUSTOM_FIELDS );
 
 		}
 		//in case someone wants to translate stuff 
