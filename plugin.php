@@ -49,6 +49,7 @@ if( ! class_exists( 'CLASSNAME' ) ) {
 			define( 'PLUGIN_WIDGET', PLUGIN_INC . 'widget.php' );
 			define( 'PLUGIN_API_CLIENT', PLUGIN_INC . 'client.php' );
 			define( 'PLUGIN_SCRIPTS', PLUGIN_INC . 'scripts.php' );
+			define( 'PLUGIN_DASHBOARD', PLUGIN_INC . 'dashboard_widget.php');
 
 		}
 
@@ -61,6 +62,7 @@ if( ! class_exists( 'CLASSNAME' ) ) {
 			require( PLUGIN_API_CLIENT );
 			require( PLUGIN_SETTINGS_PAGE );
 			require( PLUGIN_POST_META_BOX );
+			require( PLUGIN_DASHBOARD );
 			//require( PLUGIN_CUSTOM_FIELDS );
 
 		}

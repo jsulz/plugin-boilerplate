@@ -99,8 +99,6 @@ class PLUGIN_SETTINGS_PAGE {
 
 		?>
 
-		<?php echo $settings[ 'color']; echo 'hello' ?>
-
 		<p>
 			<input type="checkbox" name="plugin_settings[checkbox]" value="1" <?php checked( $checkbox, 1 ); ?> />
 		</p>
